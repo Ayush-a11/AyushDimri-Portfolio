@@ -3,8 +3,8 @@ body{
 }
 :root {
   color-scheme: light dark;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #000000;
+  /* color: rgba(0, 0, 0, 0.87); */
+  /* background-color: #FFF; */
 }
 @tailwind base;
 @tailwind components;

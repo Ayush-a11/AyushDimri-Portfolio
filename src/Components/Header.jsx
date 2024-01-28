@@ -1,21 +1,69 @@
-import React from 'react';
+import { faBarcode, faBars, faClose, faSun } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useRef, useState,useEffect } from 'react';
+import ProjectCard from './Projects/ProjectCard';
 
-function Header() {
+function Header({projectRef,homeRef,detailsRef}) {
+  const [navHide, setNav] =useState(false)
+  const [theme, setTheme] = useState('dark');
+
+  const projectHandler=()=>{
+    projectRef.current?.scrollIntoView({behavior:'smooth'})
+  }
+  const homeHandler=()=>{
+    homeRef.current?.scrollIntoView({behavior:'smooth'})
+  }
+  const detailsHandler=()=>{
+    detailsRef.current?.scrollIntoView({behavior:'smooth'})
+  }
+
+  useEffect(() => {
+
+      if(theme=='light') {
+        document.documentElement.classList.remove("dark")
+        document.querySelector("body").style.backgroundColor="#FFFF";
+
+      }else{
+        document.documentElement.classList.add("dark")
+        document.querySelector("body").style.backgroundColor="#000";
+        
+        // .querySelector(":root").style.backgroundColor="#FFFF"
+      }
+  },[theme]);  
+
+  const themeHandler = ()=>{
+      setTheme(theme==='dark'?'light':'dark');
+  } 
+
   return (
-    <div className=" w-screen  items-center justify-between
-	rounded-xl text-primary font-mono text-2xl bg-accent p-4 mb-10">
+    <div className="fixed  z-10 flex w-full -mt-40 items-start rounded-xl text-primary font-mono text-2xl bg-light border-b-4 border-black dark:border-b-8 dark:bg-accent  ">
+    <nav className="w-full flex flex-col items-center justify-center
+    md:flex md:flex-row md:justify-between  space-y-4
+	 p-4 ">
       <div className="flex items-center">
-        <h1 className="text-white text-3xl font-bold">AD</h1>
+        <h1 className="text-black dark:text-white text-3xl font-bold">AD</h1>
         <span className="cursor-pointer text-gray-500 ml-2">Web Developer</span>
       </div>
-      <nav className="flex">
-        <ul className="flex space-x-4">
-          <li className=" cursor-pointer hover:text-secondary transition duration-300">Home</li>
-		      <li className=" cursor-pointer hover:text-secondary transition duration-300">Details</li>
-          <li className="cursor-pointer hover:text-secondary transition duration-300">Resume</li>
-          <li className="cursor-pointer hover:text-secondary transition duration-300">Projects</li>
+      <div>
+        <button className="hidden md:block" onClick={themeHandler}>
+      <FontAwesomeIcon icon={faSun}/></button>
+      </div>
+      <div className={`${!navHide?'hidden':''} md:flex transition duration-300`}>
+        <ul className={`flex flex-col md:flex-row  space-x-4 pb-2  `}>
+          <li className="ml-4 md:ml-0 cursor-pointer hover:text-secondary transition duration-300" onClick={homeHandler} >Home</li>
+		      <li className=" cursor-pointer hover:text-secondary transition duration-300" onClick={detailsHandler}>Details</li>
+          <li className="cursor-pointer hover:text-secondary transition duration-300" onClick={detailsHandler}>Resume</li>
+          <li className="cursor-pointer hover:text-secondary transition duration-300" onClick={projectHandler}>Projects</li>
         </ul>
-      </nav>
+      </div>    
+    </nav>
+    <button className=" block md:hidden mt-4 mr-4 "onClick={themeHandler}>
+      <FontAwesomeIcon icon={faSun}/></button>
+    <button className="block md:hidden mt-4 mr-4" onClick={()=>setNav((prev)=>!prev)}>
+      {!navHide?<FontAwesomeIcon icon={faBars}/>:
+      <FontAwesomeIcon icon={faClose}/>}</button>
+
+      
     </div>
   );
 }

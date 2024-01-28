@@ -1,18 +1,17 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
-import Image from './Components/Image'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
 import Container from './Components/Container'
 
 function App() {
 
   return (
     <>
-      <Header/>
+    <div className="h-auto w-full  bg-white dark:bg-black -ml-">
+      
       <Container/>
-      <Footer/>
+      
+      {/* <div className="bg-blue-600 w-96 h-72"></div> */}
+      </div>
     </>
   )
 }

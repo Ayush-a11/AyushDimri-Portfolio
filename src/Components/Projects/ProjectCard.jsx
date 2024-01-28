@@ -1,14 +1,14 @@
 import { faMobileRetro } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react'
-
-function ProjectCard() {
+import React, { forwardRef, useState } from 'react'
+import blogPosting from '../../assets/BlogPosting.png'
+function ProjectCard({},ref) {
 	const [more,setMore] = useState(false);
 	const projects=[
 		{
-			Image:'/img',
+			Image:blogPosting,
 			Name: 'BlogPosting',
-			Url: 'http://blog',
+			Url: '/h',
 			more: true
 		},
 		{
@@ -19,22 +19,25 @@ function ProjectCard() {
 		}
 	];
   return (
-	<div className="w-full bg-accent mt-10">
+	<div ref={ref} className=" w-full flex flex-col justify-center items-center bg-light  border-t-4 border-black dark:border-0  dark:bg-accent mt-10">
 		<h1 className= " text-primary font-mono font-bold text-5xl" >Projects</h1>
-	<div className="w-full grid grid-cols-2 items-center justify-center">
+	<div className="flex">
+	<div className="mt-5 mb-5  grid grid-cols-1 md:grid-cols-2 md:space-x-12 space-x-0">
 		{projects.map(items=>(
-			<div key={items.Name} className="w-2/4 card rounded-lg bg-slate-400 overflow-hidden shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-transform duration-300">
-				<img className="card-image rounded-lg w-64 h-48 object-cover" src={items.Image}/>
-				<h1>{items.Name}</h1>
+			<div key={items.Name} className="mt-10 w-full h-auto card rounded-lg bg-white bg-opacity-5 overflow-hidden shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-transform duration-300">
+				<img className="card-image rounded-lg w-full h-96 object-cover" src={items.Image}/>
+				<h1 className="text-primary font-mono font-bold text-center text-2xl pt-10">{items.Name}</h1>
 			</div>
 		))
 		}
 	</div>
-	<button className='w-1/12 h-14 text-center bg-black text-primary border-primary font-sans font-bold hover:bg-primary hover:text-black border-2	
-		hover:border-2 hover:border-black p-4 rounded-2xl' onClick={()=>setMore((prev)=>!prev)}>
-		<FontAwesomeIcon className='text-xl' icon={faMobileRetro}/>&nbsp;{more?'More':'Less'}</button>	
+	</div>
+	<button className='w-1/12 h-10 text-center dark:bg-black dark:text-primary mb-4 text-primary border-primary font-sans font-bold hover:bg-primary hover:text-black border-2	
+		hover:border-2 mt-10 hover:border-black rounded-2xl' onClick={()=>setMore((prev)=>!prev)}>
+		{more?'More':'Less'}</button>	
 	</div>
   )
 }
 
-export default ProjectCard
+export default forwardRef(ProjectCard)
+
