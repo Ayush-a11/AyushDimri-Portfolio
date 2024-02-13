@@ -11,7 +11,7 @@ export default {
         primary: '#ef233c',    // Custom primary color
         secondary: '#6574cd',  // Custom secondary color
         accent: 'rgb(15,15,15)',     // Custom accent color
-        light:'#f2e8cf',
+        light:'#e5e5e5',
       },
     },
   },
