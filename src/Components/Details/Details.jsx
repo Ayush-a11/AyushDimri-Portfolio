@@ -23,7 +23,8 @@ function Details({},ref) {
 
 
   return (
-	<div ref={ref} className="rounded-xl text-primary font-mono text-2xl bg-light border-t-4 border-black dark:border-0 dark:bg-accent mt-8 transition-all duration-300 ">
+	<div ref={ref} className=" z-2 relative top-10 rounded-xl text-primary font-mono text-2xl bg-light border-t-4 border-black dark:border-0 dark:bg-accent mt-8 transition-all duration-300 "
+	style={{marginTop:"0"}}>
 		<h1 className= " text-primary font-mono font-bold text-5xl text-center mb-10" >Details</h1>
 		<div className='flex items-start justify-around pb-10 text-center'>
 			<div onClick={()=>setSection('Skill')}className={`${section==='Skill'?'bg-primary text-accent	 -mt-1 border-accent':'bg-slate-100 dark:bg-white dark:bg-opacity-10 '} text-lg shadow-xl ml-1 w-1/3 rounded-xl`}>

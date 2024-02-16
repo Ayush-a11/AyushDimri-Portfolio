@@ -1,4 +1,4 @@
-import { faBarcode, faBars, faClose, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faBarcode, faBars, faClose, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef, useState,useEffect } from 'react';
 import ProjectCard from './Projects/ProjectCard';
@@ -7,11 +7,17 @@ function Header({projectRef,homeRef,detailsRef}) {
   const [navHide, setNav] =useState(false)
   const [theme, setTheme] = useState('dark');
 
+  window.scrollTo({
+    
+    behavior: "smooth",
+  });
   const projectHandler=()=>{
     projectRef.current?.scrollIntoView({behavior:'smooth'})
   }
   const homeHandler=()=>{
-    homeRef.current?.scrollIntoView({behavior:'smooth'})
+    window.scrollTo(0,0)
+
+    // homeRef.current?.scrollIntoView({behavior:'smooth'})
   }
   const detailsHandler=()=>{
     detailsRef.current?.scrollIntoView({behavior:'smooth'})
@@ -36,7 +42,8 @@ function Header({projectRef,homeRef,detailsRef}) {
   } 
 
   return (
-    <div className="fixed  z-10 flex w-full -mt-40 items-start rounded-xl text-primary font-mono text-2xl bg-light border-b-4 border-black dark:border-b-8 dark:bg-accent  ">
+    <div className="sticky top-1 z-20 flex w-full  items-start rounded-xl text-primary font-mono text-2xl bg-light border-b-4 border-black dark:border-b-8 dark:bg-accent  "
+   >
     <nav className="w-full flex flex-col items-center justify-center
     md:flex md:flex-row md:justify-between  space-y-4
 	 p-4 ">
@@ -45,8 +52,8 @@ function Header({projectRef,homeRef,detailsRef}) {
         <span className="cursor-pointer text-gray-500 ml-2">Web Developer</span>
       </div>
       <div>
-        <button className="hidden md:block" onClick={themeHandler}>
-      <FontAwesomeIcon icon={faSun}/></button>
+        <button className={`hidden md:block hover:scale-125 transition-transform duration-300 text-4xl ${theme==='dark' ?'text-primary':'text-black'}`}  onClick={themeHandler}>
+      <FontAwesomeIcon  icon={faMoon}/></button>
       </div>
       <div className={`${!navHide?'hidden':''} md:flex transition duration-300`}>
         <ul className={`flex flex-col md:flex-row  space-x-4 pb-2  `}>

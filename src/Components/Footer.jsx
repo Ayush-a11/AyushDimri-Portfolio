@@ -6,7 +6,7 @@ import { faInstagram, faLinkedin,faGithub,  } from '@fortawesome/free-brands-svg
 function Footer() {
   return (
 	<>
-	<div className="w-full flex  flex-col justify-around items-center h-64 mt-10  bg-light border-t-4 border-black dark:border-0 dark:bg-accent ">
+	<div className="z-10 relative w-full flex  flex-col justify-around items-center h-64 mt-10  bg-light border-t-4 border-black dark:border-0 dark:bg-accent ">
 		<div className="w-full h-2/3 flex flex-col  justify-around items-center md:flex md:flex-row space-y-4 space-x-10 ">
 		<div className=" space-x-4 ">
 		<button className=' dark:bg-black dark:text-primary text-primary border-primary font-sans font-bold hover:bg-primary hover:text-black border-2
