@@ -2,7 +2,7 @@ import { faMobileRetro } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { forwardRef, useEffect, useState } from 'react'
 import blogPosting from '../../assets/BlogPosting.png'
-import letsChat from '../../assets/letsChat.png'
+import letsChat from '../../assets/LetsChat.png'
 import todoimg from '../../assets/TodoApp.png'
 import ecommerce from '../../assets/Ecommerce.png'
 import AOS from 'aos';
