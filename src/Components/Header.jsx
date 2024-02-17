@@ -2,6 +2,7 @@ import { faBarcode, faBars, faClose, faMoon, faSun } from '@fortawesome/free-sol
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef, useState,useEffect } from 'react';
 import ProjectCard from './Projects/ProjectCard';
+import DevGif from '../assets/DevGif.gif'
 
 function Header({projectRef,homeRef,detailsRef}) {
   const [navHide, setNav] =useState(false)
@@ -42,17 +43,17 @@ function Header({projectRef,homeRef,detailsRef}) {
   } 
 
   return (
-    <div className="sticky top-1 z-20 flex w-full  items-start rounded-xl text-primary font-mono text-2xl bg-light border-b-4 border-black dark:border-b-8 dark:bg-accent  "
+    <div className="sticky top-0 z-20 flex w-full  items-start rounded-xl text-primary font-mono text-2xl bg-light border-b-2 border-secondary  dark:bg-accent  "
    >
     <nav className="w-full flex flex-col items-center justify-center
     md:flex md:flex-row md:justify-between  space-y-4
-	 p-4 ">
+	 p-2 pl-3 ">
       <div className="flex items-center">
         <h1 className="text-black dark:text-white text-3xl font-bold">AD</h1>
         <span className="cursor-pointer text-gray-500 ml-2">Web Developer</span>
       </div>
       <div>
-        <button className={`hidden md:block hover:scale-125 transition-transform duration-300 text-4xl ${theme==='dark' ?'text-primary':'text-black'}`}  onClick={themeHandler}>
+        <button className={`hidden md:block hover:scale-125 transition-transform duration-300 text-4xl ${theme==='dark' ?'text-primary':'text-secondary'}`}  onClick={themeHandler}>
       <FontAwesomeIcon  icon={faMoon}/></button>
       </div>
       <div className={`${!navHide?'hidden':''} md:flex transition duration-300`}>
@@ -64,8 +65,8 @@ function Header({projectRef,homeRef,detailsRef}) {
         </ul>
       </div>    
     </nav>
-    <button className=" block md:hidden mt-4 mr-4 "onClick={themeHandler}>
-      <FontAwesomeIcon icon={faSun}/></button>
+    <button className={`block md:hidden mt-4 mr-4 ${theme==='dark' ?'text-primary':'text-secondary'}`} onClick={themeHandler}>
+      <FontAwesomeIcon icon={faMoon}/></button>
     <button className="block md:hidden mt-4 mr-4" onClick={()=>setNav((prev)=>!prev)}>
       {!navHide?<FontAwesomeIcon icon={faBars}/>:
       <FontAwesomeIcon icon={faClose}/>}</button>

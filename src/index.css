@@ -4,7 +4,7 @@ body{
 :root {
   color-scheme: light dark;
   /* color: rgba(0, 0, 0, 0.87); */
-  /* background-color: #FFF; */
+  /* background-color: rgb(15,15,15); */
 }
 @tailwind base;
 @tailwind components;

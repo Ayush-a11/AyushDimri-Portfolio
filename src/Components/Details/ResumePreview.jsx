@@ -14,6 +14,7 @@ function ResumePreview() {
 	  <iframe
 	  title="PDF Preview"
 		src={Resume}
+	  
 	  width="100%"
 	  height="1060px"
 	/>

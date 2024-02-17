@@ -25,7 +25,7 @@ function Container() {
 
 
   return (
-	<div className='inline-flex flex-col w-full '>	
+	<div className='flex flex-col md:w-9/12 w-full justify-center items-center m-auto scale-80	'>	
 		<Header projectRef={projectRef}
 				homeRef={homeRef}
 				detailsRef={detailsRef}
@@ -33,14 +33,14 @@ function Container() {
 		{/* <div className='' data-aos="fade-out"> */}
 		<Image ref={homeRef} />
 		{/* </div> */}
-		<div className='z-10 relative bg-black w-full h-auto '>
-		<div data-aos="fade-in" > 
+		<div className='z-10 relative dark:bg-black bg-white w-full h-auto '>
+		<div data-aos="fade-up" > 
 		<Details ref={detailsRef}/>
 		</div>
-		<div data-aos="fade-in"> 
+		<div data-aos="fade-up"> 
 		<ProjectCard ref={projectRef}/>
 		</div>
-		<div data-aos="fade-in">
+		<div data-aos="fade-up">
 		<Footer/>
 		</div>
 		</div>
