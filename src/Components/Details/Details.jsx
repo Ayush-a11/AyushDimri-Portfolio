@@ -42,7 +42,7 @@ function Details({},ref) {
 			<button  onClick={()=>setSection('Skill')}>Skill's </button>
 			</div>
 			<div data-aos="fade-up" onClick={()=>setSection('Exp')} className={`${section==='Exp'?'bg-primary text-accent   border-accent':'bg-slate-100 dark:bg-white dark:bg-opacity-10 '}md:text-lg sm:text-lg text-base shadow-xl ml-1 w-1/3 rounded-xl`}>
-			<button  onClick={()=>setSection('Exp')}>Experince </button>
+			<button  onClick={()=>setSection('Exp')}>Experience</button>
 			</div>
 			<div data-aos="fade-up" onClick={()=>setSection('Edu')} className={`${section==='Edu'?'bg-primary text-accent   border-accent':'bg-slate-100 dark:bg-white dark:bg-opacity-10 '} md:text-lg sm:text-lg text-base shadow-xl ml-1 w-1/3 rounded-xl`}>
 			<button onClick={()=>setSection('Edu')}>Education </button>
