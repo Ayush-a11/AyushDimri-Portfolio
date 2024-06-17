@@ -2,6 +2,7 @@ import { faMobileRetro } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { forwardRef, useEffect, useState } from 'react'
 import blogPosting from '../../assets/BlogPosting.png'
+import SnippetHub from '../../assets/SnippetHub.png'
 import letsChat from '../../assets/LetsChat.png'
 import todoimg from '../../assets/TodoApp.png'
 import ecommerce from '../../assets/Ecommerce.png'
@@ -15,6 +16,12 @@ function ProjectCard({},ref) {
 
 	const projects=[
 		{
+			Image: SnippetHub,
+			Name: 'SnippetHub',
+			Url: 'https://snippet-hub.vercel.app',
+			more: true	
+		},
+		{
 			Image: blogPosting,
 			Name: 'BlogPosting',
 			Url: 'https://blog-posting-react-app.vercel.app/',
@@ -24,7 +31,7 @@ function ProjectCard({},ref) {
 			Image: letsChat,
 			Name: 'Let\'\s chat',
 			Url: 'https://lets-chat-app-beige.vercel.app/',
-			more: true
+			more: !more
 		},
 		{
 			Image:todoimg,

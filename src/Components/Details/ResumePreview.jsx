@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Document, Page } from 'react-pdf';
-import Resume from '../../assets/Ayush Dimri Resume-2024.pdf'
+import Resume from '../../assets/AYUSH_DIMRI_RESUME(2024).pdf'
 
 
 function ResumePreview() {
 	// AyushDimri-Portfolio\src\assets\Ayush Dimri Resume-2024.pdf
 
-  const file='../../assets/Ayush Dimri Resume-2024.pdf'
+  const file='../../assets/AYUSH_DIMRI_RESUME(2024).pdf'
 
   return (
 	<div className="transition-transform duration-500">
